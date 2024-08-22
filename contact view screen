@@ -1,0 +1,40 @@
+import React,{usestate, useeffect} from 'react'
+  import {fetchContacts}from'../utils/api',
+
+  const ContactsView=()={
+   const[contacts,setcontacts]=usestate([]);
+   const[loading,setloading]=usestate(true);
+
+    useEffect(()={
+    fetchcontacts().then(data={
+     setcontacts(data);
+     setloading(false);
+});
+},[]);
+
+const handledelete=(id)={
+setcontacts(contacts.filter(contact=contact.id!==id));
+};
+
+return(
+  <div>
+  {loading?(
+  ):(
+  <ul>
+  {contacts.map(contact=(
+  <li key={contacts.id}>
+  {contact.name}
+  <button onclick={()=
+  console.log(view${contact.name}
+  details)}>view</button>
+
+    </li>
+  ))}
+</ul>
+  )}
+</div>
+  );
+};
+
+export default ContactView;
+ 
